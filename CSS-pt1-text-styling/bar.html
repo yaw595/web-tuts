@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>50 Equal Height Bars</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .bar {
+            margin: 0 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="w-96 h-8 realtive rounded overflow-hidden">
+        <div id="barContainer" class="bar-container flex items-center justify-between w-96 absolute"></div>
+        <div class="bg-purple-500 w-64 h-8 absolute rounded"></div>
+        <div class="bg-blue-500 w-56 h-8 absolute rounded"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const barContainer = document.getElementById('barContainer');
+            const barHeight = 30; // Height of each bar in pixels
+
+            for (let i = 0; i < 50; i++) {
+                const bar = document.createElement('div');
+                bar.className = 'bar bg-gray-500 w-1 h-8';
+                barContainer.appendChild(bar);
+            }
+        });
+    </script>
+</body>
+</html>
